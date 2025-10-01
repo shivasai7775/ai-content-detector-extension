@@ -1,1 +1,56 @@
-{ "manifest_version": 3, "name": "AI Content Detector", "version": "1.0", "description": "A browser extension for detecting AI-generated content.", "permissions": ["activeTab", "scripting", "storage", "tabs", "http://*/*", "https://*/*"], "background": { "service_worker": "background.js" }, "action": { "default_popup": "popup.html", "default_icon": "icon.png" }, "content_scripts": [{ "matches": ["<all_urls>"], "js": ["content.js"] }], "icons": { "48": "icon.png" } }
+{
+  "manifest_version": 3,
+  "name": "AI Content Detector - National Security Edition",
+  "version": "1.0.0",
+  "description": "Advanced AI-generated content detection system with cybersecurity monitoring and blockchain verification for national security applications",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "notifications",
+    "webRequest",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "src/background/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "src/utils/crypto.js",
+        "src/detection/ai-detector.js",
+        "src/security/threat-monitor.js",
+        "src/blockchain/content-logger.js",
+        "src/content/content-script.js"
+      ],
+      "css": ["src/styles/content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "options_page": "src/options/options.html",
+  "web_accessible_resources": [
+    {
+      "resources": ["src/injected/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
