@@ -23,6 +23,21 @@ The architecture of the extension is built around a lightweight front-end interf
 ## Usage Guide
 Once installed, click on the extension icon in your browser toolbar to activate it. The extension will analyze the current webpage and provide a summary of its findings regarding AI-generated content.
 
+### Dashboard Features
+- **Real-Time Detection Summary**: View statistics on AI vs. human content percentages
+- **Security Alerts**: Get notified of potential threats and risk levels
+- **Blockchain Verification**: Verify content authenticity on blockchain
+- **Interactive Controls**: Scan pages, export logs, manage settings, and clear data
+
+### Quick Start
+1. Click the extension icon to open the dashboard
+2. Click "Scan Page" to analyze the current webpage
+3. Review the detection results and risk assessment
+4. Use "Verify Content" for blockchain verification
+5. Export logs for record-keeping if needed
+
+For detailed installation instructions, see [INSTALLATION.md](INSTALLATION.md).
+
 ## Configuration
 Users can customize the extension's settings by accessing the options menu. Settings include:
 - Detection sensitivity.
