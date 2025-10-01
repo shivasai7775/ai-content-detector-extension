@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Content Detector Dashboard</title>
+    <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header Section -->
+        <header class="dashboard-header">
+            <h1 class="dashboard-title">
+                <span class="icon">🛡️</span>
+                AI Content Detector
+            </h1>
+            <div class="status-indicator" id="statusIndicator">
+                <span class="status-dot"></span>
+                <span class="status-text">Active</span>
+            </div>
+        </header>
+
+        <!-- Real-time Detection Summary -->
+        <section class="summary-section">
+            <h2 class="section-title">Detection Summary</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🤖</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="aiContentPercent">0%</div>
+                        <div class="stat-label">AI Content</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✍️</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="humanContentPercent">100%</div>
+                        <div class="stat-label">Human Content</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="confidence">--</div>
+                        <div class="stat-label">Confidence</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔍</div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="wordsAnalyzed">0</div>
+                        <div class="stat-label">Words Analyzed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Alerts Section -->
+        <section class="alerts-section">
+            <h2 class="section-title">Security Alerts</h2>
+            <div class="alerts-container" id="alertsContainer">
+                <div class="alert-item alert-info">
+                    <div class="alert-icon">ℹ️</div>
+                    <div class="alert-content">
+                        <div class="alert-title">No threats detected</div>
+                        <div class="alert-message">Page is currently safe</div>
+                    </div>
+                </div>
+            </div>
+            <div class="risk-assessment">
+                <div class="risk-label">Risk Level:</div>
+                <div class="risk-meter">
+                    <div class="risk-bar" id="riskBar" style="width: 10%"></div>
+                </div>
+                <div class="risk-value" id="riskValue">Low</div>
+            </div>
+        </section>
+
+        <!-- Blockchain Verification Section -->
+        <section class="blockchain-section">
+            <h2 class="section-title">Blockchain Verification</h2>
+            <div class="blockchain-status">
+                <div class="blockchain-item">
+                    <span class="blockchain-label">Status:</span>
+                    <span class="blockchain-value" id="blockchainStatus">Not Verified</span>
+                </div>
+                <div class="blockchain-item">
+                    <span class="blockchain-label">Hash:</span>
+                    <span class="blockchain-value monospace" id="blockchainHash">--</span>
+                </div>
+                <div class="blockchain-item">
+                    <span class="blockchain-label">Timestamp:</span>
+                    <span class="blockchain-value" id="blockchainTimestamp">--</span>
+                </div>
+            </div>
+            <button class="btn btn-secondary" id="verifyBtn">
+                <span class="btn-icon">🔐</span>
+                Verify Content
+            </button>
+        </section>
+
+        <!-- Control Buttons Section -->
+        <section class="controls-section">
+            <div class="controls-grid">
+                <button class="btn btn-primary" id="scanBtn">
+                    <span class="btn-icon">🔍</span>
+                    Scan Page
+                </button>
+                <button class="btn btn-secondary" id="exportBtn">
+                    <span class="btn-icon">📥</span>
+                    Export Logs
+                </button>
+                <button class="btn btn-secondary" id="settingsBtn">
+                    <span class="btn-icon">⚙️</span>
+                    Settings
+                </button>
+                <button class="btn btn-secondary" id="clearBtn">
+                    <span class="btn-icon">🗑️</span>
+                    Clear Data
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="dashboard-footer">
+            <div class="footer-info">
+                <span>Last scan: <span id="lastScan">Never</span></span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/popup.js"></script>
+</body>
+</html>
